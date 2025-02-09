@@ -7,9 +7,9 @@ const JSONListItem = ({ item }) => {
     return (
         <li className="outLiCompleteListItem">
         {Object.entries(item).map(([key, value], index) => (
-            <div key={key}>
-                <span className={index === 0 ? "mainKeyListItem" : ""}>{index === 0 ? `${key} [${value}]` : `${key} :` }</span>
-                <span>
+            <div key={key} className="listItemDiv">
+                <span className={index === 0 ? "mainKeyListItem" : "mainKeyListItemnotfirst"}>{index === 0 ? `${key} [${value}]` : `${key}`}</span>
+                <span className="valueSpan">
                     {typeof value ==="object" ? 
                     (
                     <ul className= "innerUl">
@@ -22,7 +22,7 @@ const JSONListItem = ({ item }) => {
                     </ul>
                     )
                     : 
-                    ( index === 0 ? "" : value )} 
+                    (<span className="valueSpan"> {index === 0 ? "" : value} </span>)} 
                 </span>
             </div>
         ))}

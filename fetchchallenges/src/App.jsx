@@ -6,6 +6,7 @@ import  Header  from './Header.jsx'
 import FetchAPI from './FetchAPI.js';
 
 
+
 function App() {
   const [headerItems, setHeaderItems] = useState([
     {
@@ -32,6 +33,7 @@ function App() {
   const [request, setRequest] = useState('users');
   const [fetchError, setFetchError] = useState(null);
   const [jsonList, setJSONList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchBodyArg = {
     method: "GET",
@@ -90,6 +92,8 @@ const displayJSON = async() => {
     setFetchError('Fout in het ophalen van de data');
     console.log(e.message);
 
+  } finally {
+    setIsLoading(false);
   }
 }
 
@@ -130,7 +134,7 @@ useEffect(() => {
         handlenavlinks={handlenavlinks}
       />
       <main>
-        { fetchError  ?  ( <p className = "ErrorPara">{fetchError}</p> ) : 
+        { fetchError  ?  ( <p className = "ErrorPara">{fetchError}</p> ) : isLoading ? (<p className='isLoading'>content is loading</p>) :
         (
           <JSONList JSONObjList = {jsonList} />
         )}

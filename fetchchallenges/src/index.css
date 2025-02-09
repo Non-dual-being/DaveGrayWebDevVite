@@ -13,7 +13,9 @@
   --neutral-dark: #212121; /* Diep donkergrijs */
   --background-white: #dddd;
   --font-size-responsive: clamp(0.9rem, 1vw + 0.2rem, 1.2rem);
+  --font-sizeLarge-responsive: clamp(1.5rem, 2vw, 2rem);
   --font-color-Error: rgb(217, 49, 52);
+  
 
 }
 
@@ -101,9 +103,16 @@ ul {
   text-decoration: underline;
 }
 
-li:hover{
+.outLiCompleteListItem:hover {
   background-color:rgba(255, 255, 255, 0.1);
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+}
+
+li:hover{
+  background-color: #b89c71;
+  color: #222;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .ErrorPara {
@@ -150,6 +159,7 @@ main {
   color: #333;
   padding: 0.2rem;
   border-radius: 5px;
+  border: 2px solid #333;
 }
 
 .evenInnerUl {
@@ -167,12 +177,66 @@ main {
   padding: 0.5rem;
 
 }
+.outLiCompleteListItem:hover {
+  background-color: papayawhip;
+  box-shadow: inset 1px 1px 5px #333;
+
+}
+
+
 
 
 .mainKeyListItem {
   background-color: #333;
   color: white;
   display: block;
+  width: 100%;
   text-align: center;
   padding: 1rem;
+  border-radius: 15px;
+}
+
+.isLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  background-color: papayawhip;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: var(--font-sizeLarge-responsive);
+}
+
+.mainKeyListItemnotfirst{
+  display: inline;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.listItemDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  padding: 0.2rem 0.5rem;
+  border: none;
+  box-shadow: 1px 1px 3px #333;
+  border-radius: 3px;
+  transition: background-color 0,5s ease-out;
+}
+
+.listItemDiv:hover{
+  background-color: rgba(51, 51, 51, 0.5);  
+}
+
+
+
+.valueSpan{
+  display: inline-block;
+  text-align: end;
+  flex-grow: 1;
+  flex-wrap: nowrap;
 }
