@@ -1,6 +1,7 @@
 import { use, useState } from 'react'
 import { useEffect } from 'react';
 import Form from './Form.jsx';
+import List from './List.jsx'
 
 
 function App() {
@@ -29,10 +30,13 @@ function App() {
   }, [reqType])
 
   return (
-    <div>
+    <div className='AppDiv'>
     <Form 
       reqType = {reqType}
       setReqType = {setReqType}
+    />
+    <List 
+      item = {item}
     />
 
   </div>

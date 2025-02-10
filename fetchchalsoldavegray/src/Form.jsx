@@ -5,7 +5,7 @@ import Button from './Button.jsx';
 
 const Form = ({ reqType, setReqType}) => {
   return (
-    <form
+    <form className='myForm'
         onSubmit={(e) => e.preventDefault()}   
         >
         <Button 
