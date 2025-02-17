@@ -20,6 +20,17 @@ const PostPage = ({ posts, handeDelete }) => {
           </>
         
         }
+        {!post && 
+          <>
+            <h2>Post Not Found</h2>
+            <p>Well, that's dissapointing</p>
+            <NavLink to="/">
+              <p>Visit our Homepage</p>
+            </NavLink>
+          
+          </>
+      
+        }
       </article>
     
     </main>
